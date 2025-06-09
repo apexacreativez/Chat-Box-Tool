@@ -339,7 +339,7 @@ useEffect(() => {
     setLoading(true); 
 
     try {
-      const res = await axios.post("https://chat-box-tool.vercel.app/api/v1/student/ask", {
+        const res = await axios.post("https://chat-box-node-js-project-3.onrender.com/api/v1/student/ask", {
         message: userMessage.text,
       });
       const botReply = res.data.reply;
