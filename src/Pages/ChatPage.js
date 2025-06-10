@@ -339,9 +339,15 @@ useEffect(() => {
     setLoading(true); 
 
     try {
-        const res = await axios.post("https://chat-box-node-js-project-3.onrender.com/api/v1/student/ask", {
-        message: userMessage.text,
-      });
+      const res = await axios.post(
+    "https://chat-box-node-js-project-3.onrender.com/api/v1/student/ask",
+    { message: userMessage.text },
+    {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }
+  );
       const botReply = res.data.reply;
 
       setChatLog((prev) => [...prev, { sender: "bot", text: botReply }]);
